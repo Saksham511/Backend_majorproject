@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "backend of the major project",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "start": "node index.js",
+    "start:dev": "nodemon index.js",
     "test": "test"
   },
   "repository": {
