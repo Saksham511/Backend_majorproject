@@ -1,0 +1,26 @@
+{
+  "name": "backend_majorproject",
+  "version": "1.0.0",
+  "description": "backend of the major project",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saksham511/Backend_majorproject.git"
+  },
+  "keywords": [
+    "node",
+    "express"
+  ],
+  "author": "anyone",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Saksham511/Backend_majorproject/issues"
+  },
+  "homepage": "https://github.com/Saksham511/Backend_majorproject#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
