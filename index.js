@@ -1,12 +1,32 @@
-import express from "express";
+import express, { json, response } from "express";
+import dotenv from "dotenv";
+import mongoose from "mongoose";
+import user from "./models/user.js";
+import userRouter from "./router/userRouter.js";
 
+
+dotenv.config();
 const app= express();
 
-app.get('/',(req,res)=>{
-    res.send({
-        message: "API is running",
-        status: "fine",
-    });
-});
+app.use(express.json());
 
-app.listen(4000, console.log('Hello'));
+(async () => {
+    try {
+      const conn = await mongoose.connect(process.env.MONGO_URI, {
+        useUnifiedTopology: true,
+        useNewUrlParser: true,
+        //   useCreateIndex: true,
+      });
+  
+      console.log(`MongoDB Connected: ${conn.connection.host}`);
+    } catch (error) {
+      console.error(`Error: ${error.message}`);
+      process.exit(1);
+    }
+  })();
+
+
+app.use("/user", userRouter);
+
+
+app.listen(process.env.PORT, console.log(`Hello from port: ${process.env.PORT}`));
